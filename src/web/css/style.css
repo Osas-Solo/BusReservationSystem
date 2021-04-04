@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    --primary-color1: #c60000;
+    --primary-color2: #f61111;
+    --complementary-color1: #3aca3a;
+    --grey-color1: #f2f2f2;
+    --grey-color2: #e6e6e6;
+    --drop-shadow1: 0px 5px 5px rgba(0, 0, 0, 0.50);
+    --drop-shadow2: 0px -5px 5px rgba(0, 0, 0, 0.50);
+    font-family: Verdana, Arial, sans-serif;
+    letter-spacing: 0.1em;
+    word-spacing: 0.2em;
+    line-height: 1.6em;
+    color: var(--primary-color1);
+    background-color: var(--grey-color1);    
+}
+
+header {
+    width: 100%;
+    height: auto;
+    background-color: var(--primary-color1);
+    color: var(--grey-color1);
+    margin-bottom: 50px;
+    padding: 10px;
+    box-shadow: var(--drop-shadow1);
+}
+
+header nav ul {
+    width: 50%;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 10px auto;
+}
+
+header nav ul li {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+header nav ul a{
+    color: var(--grey-color1) !important;
+    text-decoration: none;
+}
+
+header nav ul a:focus, header nav ul a:hover, header nav ul a:active {
+    color: var(--complementary-color1) !important;
+}
+
+article {
+    padding: 30px;
+}
+
+fieldset {
+    width: 30%;
+    margin: 30px auto;
+    padding: 20px;
+    border: transparent;
+    box-shadow: var(--drop-shadow1);
+    border-radius: 20px;
+    background-color: var(--grey-color1);
+    color: var(--primary-color1);
+    font-weight: bold;
+    text-align: center;
+}
+
+input, select {
+    background-color: #ffffff;
+    color: var(--primary-color2);
+    font-weight: bold;
+    border: 2px solid var(--primary-color1);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    display: block;
+    background-color: var(--primary-color1);
+    color: var(--grey-color1);
+    font-size: 1em;
+    font-weight: bold;
+    padding: 15px;
+    margin: 0 auto;
+    border: transparent;
+    border-radius: 20px;
+    box-shadow: var(--drop-shadow1);
+    cursor: pointer;
+}
+
+.alternate-page-prompt {
+    margin: 30px auto;
+    text-align: center;
+}
+
+button:hover {
+    color: var(--complementary-color1);
+}
+
+button:active {
+    color: var(--grey-color1);
+}
+
+
+footer {
+    width: 100%;
+    height: 50px;
+    background-color: var(--primary-color1);
+    padding: 20px;
+    color: var(--grey-color1);
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+    box-shadow: var(--drop-shadow2);
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color2);
+    margin-top: 50px;
+    font-size: 2em;
+}
+
+p {
+    color: var(--primary-color1);
+    margin: 10px;
+}
+
+table {
+    width: 50%;
+    padding: 10px;
+    margin: 20px auto 0 auto;
+    margin-bottom: 50px;
+    font-weight: bold;
+    border-collapse: collapse;
+    box-shadow: var(--drop-shadow1);
+}
+
+tr {
+    color: var(--primary-color1);
+}
+
+th {
+    color: var(--primary-color2);
+    font-size: 1.2em;
+}
+
+tr:nth-child(odd) {
+    background-color: var(--grey-color1);
+}
+
+tr:nth-child(even) {
+    background-color: var(--grey-color2);
+}
+
+th, td {
+    text-align: center;
+    padding: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: var(--primary-color2);
+}
+
+a:hover, a:active {
+    color: var(--complementary-color1);
+}
+
+a:focus {
+    color: var(--primary-color1);
+}
+
+@media only screen and (max-device-width: 600px) {
+    header nav {
+        display: block;        
+        width: 100%;
+        margin: auto;
+    }
+
+    header nav ul {
+        display: block;
+        padding: 10px;
+    }
+
+    header nav ul li {
+        display: block;
+        margin-top: 15px;
+    }
+
+    article {
+        padding: 10px;
+    }
+
+    fieldset {
+        display: block;
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    table {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-device-width: 840px) and (orientation: landscape) {
+    header nav {
+        width: 100%;
+    }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Reservation System</title>
+
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+
+    <link rel = "stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href = "index.html">Home</a></li>
+                <li><a href = "about.html">About</a></li>
+                <li><a href = "contact.html">Contact Us</a></li>
+                <li><a href = "dashboard">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+
+        <h1>Bus Reservation System</h1>
+
+        <form action = "reserve-seat" method = "GET">
+            <fieldset class = "reservation-fieldsets">
+                <label for = "station">Station:</label>
+                <select name = "station" id = "station">
+                    <option value = ""></option>
+                    <option value = "Benin">Benin</option>
+                    <option value = "Abuja">Abuja</option>
+                    <option value = "Lagos">Lagos</option>
+                    <option value = "Kano">Kano</option>
+                    <option value = "Port Harcourt">Port Harcourt</option>
+                    <option value = "Onitsha">Onitsha</option>
+                    <option value = "Warri">Warri</option>
+                </select>
+            </fieldset>
+
+            <fieldset class = "reservation-fieldsets">
+                <label for = "destination">Destination:</label>
+                <select name = "destination" id = "destination">
+                    <option value = ""></option>
+                    <option value = "Benin">Benin</option>
+                    <option value = "Abuja">Abuja</option>
+                    <option value = "Lagos">Lagos</option>
+                    <option value = "Kano">Kano</option>
+                    <option value = "Port Harcourt">Port Harcourt</option>
+                    <option value = "Onitsha">Onitsha</option>
+                    <option value = "Warri">Warri</option>
+                </select>
+            </fieldset>
+
+            <button type = "submit">Proceed</button>
+        </form>
+
+    </article>
+
+    <footer>&copy;2021 OS Tech</footer>
+
+</body>
+</html>
