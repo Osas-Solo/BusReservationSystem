@@ -44,12 +44,12 @@
 
         <form action = "register" method = "POST">
             <fieldset class = "personal-details-fieldset">
-                <label for = "first-name">First Name:</label>
+                <label for = "first-name">First Name</label>
                 <input type = "text" name = "first-name" id = "first-name" value = "<%
-                    if (isFirstNameValid) {
+                    if (isFirstNameValid && passenger.getUserName() != "") {
                         out.print(passenger.getFirstName());
                     }
-                %>">
+                %>" onfocus = "hideFirstNameErrorMessage()" required>
                 <div id = "first-name-error-message">
                     <%
                         if (!isFirstNameValid  && passenger.getUserName() != "") {
@@ -60,12 +60,12 @@
             </fieldset>
 
             <fieldset class = "personal-details-fieldset">
-                <label for = "last-name">Last Name:</label>
+                <label for = "last-name">Last Name</label>
                 <input type = "text" name = "last-name" id = "last-name" value = "<%
-                    if (isLastNameValid) {
+                    if (isLastNameValid && passenger.getUserName() != "") {
                         out.print(passenger.getLastName());
                     }
-                %>">
+                %>" onfocus = "hideLastNameErrorMessage()" required>
                 <div id = "last-name-error-message">
                     <%
                         if (!isLastNameValid && passenger.getUserName() != "") {
@@ -76,8 +76,9 @@
             </fieldset>
 
             <fieldset class = "personal-details-fieldset">
-                <label for = "username">Username:</label>
-                <input type = "text" name = "username" id = "username" value = "<%= passenger.getUserName() %>">
+                <label for = "username">Username</label>
+                <input type = "text" name = "username" id = "username" value = "<%= passenger.getUserName() %>"" 
+                onfocus = "hideUserNameErrorMessage()" required>
                 <div id = "username-error-message">
                     <%
                         if (isPassengerFound && passenger.getUserName() != "") {
@@ -88,60 +89,74 @@
             </fieldset>
 
             <fieldset class = "personal-details-fieldset">
-                <label for = "password">Password:</label>
-                <input type = "password" name = "password" id = "password">
-                <div id = "password-error-message">
+                <label for = "password">Password</label>
+                <input type = "password" name = "password" id = "password" onchange = "checkPasswordValidity()" required>
+                <div>
                     Password length should be at least 8 characters but not more than 20 characters.
                     Password must contain a lowercase character, uppercase character and a digit)
+
+                    <br><br>
+                    <span id = "password-error-message"
                     <%
                         if (!isPasswordValid && passenger.getUserName() != "") {
-                            out.print("Please enter a valid password");
+                            out.print("");
+                        } else {
+                            out.print("style = 'display: none'");
                         }
                     %>
+                    >Please enter a valid password</span>
                 </div>
             </fieldset>
 
             <fieldset class = "personal-details-fieldset">
-                <label for = "confirm-password">Confirm Password:</label>
-                <input type = "password" name = "confirm-password" id = "confirm-password">
-                <div id = "confirm-password-error-message">
+                <label for = "confirm-password">Confirm Password</label>
+                <input type = "password" name = "confirm-password" id = "confirm-password" onchange = "checkPasswordConfirmation()" required>
+                <div id = "confirm-password-error-message"
                     <%
                         if (!isPasswordConfirmed && passenger.getUserName() != "") {
-                            out.print("Passwords do not match");
+                            out.print("");
+                        } else {
+                            out.print("style = 'display: none'");
                         }
                     %>
+                >
+                    Passwords do not match
                 </div>
             </fieldset>
 
             <fieldset class = "personal-details-fieldset">
-                <label>Gender:</label>
-                <input type = "radio" name = "gender" id = "male" value = "M"> Male
-                <input type = "radio" name = "gender" id = "female" value = "F"> Female
+                <label>Gender</label>
+                <input type = "radio" name = "gender" id = "male" value = "M" required> Male
+                <input type = "radio" name = "gender" id = "female" value = "F" required> Female
             </fieldset>
 
             <fieldset class = "personal-details-fieldset">
-                <label for = "phone-number">Phone Number:</label>
+                <label for = "phone-number">Phone Number</label>
                 <input type = "tel" name = "phone-number" id = "phone-number" value = "<%
-                     if (isPhoneNumberValid) {
+                     if (isPhoneNumberValid && passenger.getUserName() != "") {
                          out.print(passenger.getPhoneNumber());
                      }
-                 %>">
-               <div id = "phone-number-error-message">
+                 %>" onchange = "checkPhoneNumberValidity()">
+                <div id = "phone-number-error-message"
                     <%
                         if (!isPhoneNumberValid && passenger.getUserName() != "") {
-                            out.print("Please enter a valid phone number (phone number should contain 11 digits)");
+                            out.print("");
+                        } else {
+                            out.print("style = 'display: none'");
                         }
                     %>
+                >
+                    Please enter a valid phone number (phone number should contain 11 digits)
                 </div>
             </fieldset>
 
             <fieldset class = "personal-details-fieldset">
-                <label for = "email">Email:</label>
+                <label for = "email">Email</label>
                 <input type = "email" name = "email" id = "email" value = "<%
-                    if (isEmailAddressValid) {
+                    if (isEmailAddressValid && passenger.getUserName() != "") {
                         out.print(passenger.getEmailAddress());
                     }
-                %>">
+                %>" onfocus = "hideEmailErrorMessage()">
                 <div id = "email-address-error-message">
                     <%
                         if (!isEmailAddressValid && passenger.getUserName() != "") {
@@ -151,8 +166,10 @@
                 </div>
             </fieldset>
 
-            <button type = "submit">Register</button>
+            <button type = "submit" id = "register">Register</button>
         </form>
+
+        <script src = "js/signup-validation.js"></script>        
 
         <div class = "alternate-page-prompt">Already a customer? <a href = "login">Login</a></div>
     </article>

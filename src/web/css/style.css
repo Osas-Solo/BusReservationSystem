@@ -70,6 +70,10 @@ fieldset {
     text-align: center;
 }
 
+fieldset div {
+    margin-top: 20px;
+}
+
 input, select {
     background-color: #ffffff;
     color: var(--primary-color2);

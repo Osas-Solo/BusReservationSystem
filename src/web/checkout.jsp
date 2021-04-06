@@ -58,50 +58,50 @@
         %>
 
         <form action = "confirm-reservation" method = "POST">
-            <div>
-                <label for = "transaction-id">Transaction ID:</label>
+            <fieldset>
+                <label for = "transaction-id">Transaction ID</label>
                 <input type = "text" name = "transaction-id" id = "transaction-id"  value = "<%= transactionID%>" readonly>
-            </div>
+            </fieldset>
 
-            <div>
-                <label for = "reservation-date">Reservation Date:</label>
+            <fieldset>
+                <label for = "reservation-date">Reservation Date</label>
                 <input type = "text" name = "reservation-date" id = "reservation-date"  value = "<%= reservationDate%>" readonly>
-            </div>
+            </fieldset>
 
-            <div>
+            <fieldset>
                 <label for = "fare">Fare:</label>
                 <input type = "number" name = "fare" id = "fare"  value = "<% out.print(String.format("%.2f", fare));%>" readonly>
-            </div>
+            </fieldset>
 
-            <div>
-                <label for = "bus-id">Bus ID:</label>
+            <fieldset>
+                <label for = "bus-id">Bus ID</label>
                 <input type = "text" name = "bus-id" id = "bus-id"  value = "<%= bus.getBusID()%>" readonly>
-            </div>
+            </fieldset>
 
-            <div>
-                <label for = "seat-number">Seat Number:</label>
+            <fieldset>
+                <label for = "seat-number">Seat Number</label>
                 <input type = "number" name = "seat-number" id = "seat-number"  value = "<%= seatNumber%>" readonly>
-            </div>
+            </fieldset>
 
-            <div>
-                <label for = "passenger-name">Passenger Name:</label>
+            <fieldset>
+                <label for = "passenger-name">Passenger Name</label>
                 <input type = "text" name = "passenger-name" id = "passenger-name"  value = "<%= passengerName%>" readonly>
-            </div>
+            </fieldset>
 
-            <div>
-                <label for = "station">Station:</label>
+            <fieldset>
+                <label for = "station">Station</label>
                 <input type = "text" name = "station" id = "station"  value = "<%= station%>" readonly>
-            </div>
+            </fieldset>
 
-            <div>
-                <label for = "destination">Destination:</label>
+            <fieldset>
+                <label for = "destination">Destination</label>
                 <input type = "text" name = "destination" id = "destination"  value = "<%= destination%>" readonly>
-            </div>
+            </fieldset>
 
-            <div>
-                <label for = "arrival-date">Arrival Date:</label>
+            <fieldset>
+                <label for = "arrival-date">Arrival Date</label>
                 <input type = "text" name = "arrival-date" id = "arrival-date"  value = "<%= arrivalDate%>" readonly>
-            </div>
+            </fieldset>
 
             <button type = "submit">Confirm Reservation</button>
         </form>

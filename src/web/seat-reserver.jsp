@@ -17,6 +17,8 @@
 
     <article>
 
+        <h1>Reserve Seat</h1>
+
         <%
             station = (String) request.getAttribute("station");
             destination = (String) request.getAttribute("destination");
@@ -36,11 +38,13 @@
                     for (int i = 0; i < buses.size(); i++) {
                         Bus currentBus = ((Bus) buses.get(i));
             %>
-                        <label for = "bus"><%= currentBus.getBusID() + ": " + currentBus.getNumberOfSeats() + " seats"%></label>
-                        <input type = "radio" name = "bus" id = "bus" value = "<%= currentBus.getBusID() %>">
+                    <fieldset>
+                        <label for = "bus"><%= "Bus: " + currentBus.getBusID() %></label>
+                        <input type = "radio" name = "bus" id = "bus" value = "<%= currentBus.getBusID() %>" required>
+                    </fieldset>
 
-                        <div id = "<%= currentBus.getBusID() + "-fieldset" %>">
-                        <label>Select seat number:</label>
+                    <fieldset>
+                        <label>Select seat number</label>
                         <select name = "<%= currentBus.getBusID() %>">
 
             <%
@@ -55,18 +59,24 @@
                         }   //  end of for j
             %>
                         </select>
-                        </div>
+                    </fieldset>
 
-                        <label for = "fare">Fare:</label>
+                    <fieldset>
+                        <label for = "fare">Fare</label>
                         <input type = "number" name = "fare" id = "fare" value = "<%= String.format("%.2f", route.getFare()) %>" readonly>
+                    </fieldset>
             <%
                     }   //  end of for i
             %>
 
-            <label for = "arrival-date">Arrival Date:</label>
-            <input type = "date" name = "arrival-date" id = "arrival-date">
+            <fieldset>
+                <label for = "arrival-date">Arrival Date</label>
+                <input type = "date" name = "arrival-date" id = "arrival-date" required>
+            </fieldset>
 
             <button type = "submit">Proceed to Checkout</button>
+
+            <script src = "js/seat-reserver-validation.js"></script>
 
             <%
                 }   //  end of if route != null

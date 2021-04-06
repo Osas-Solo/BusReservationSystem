@@ -137,7 +137,7 @@ public class Registration extends HttpServlet {
             }
         }
 
-        return digitCount == 11;
+        return digitCount == 11 && phoneNumber.length() == 11;
     }   //  end of isPhoneNumberValid()
 
     private static boolean isEmailAddressValid(String emailAddress){

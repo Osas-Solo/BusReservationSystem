@@ -28,12 +28,12 @@
 
         <form action = "dashboard" method = "POST">
             <fieldset class = "personal-details-fieldset">
-                <label for = "username">Username:</label>
+                <label for = "username">Username</label>
                 <input type = "text" name = "username" id = "username" value = "<%
                     if (userName != null) {
                         out.print(userName);
                     }
-                %>">
+                %>" onfocus = "hideUserNameErrorMessage()">
                 <div id = "username-error-message">
                 <%
                     if (request.getAttribute("isPassengerFound") != null) {
@@ -46,8 +46,8 @@
             </fieldset>
 
             <fieldset class = "personal-details-fieldset">
-                <label for = "password">Password:</label>
-                <input type = "password" name = "password" id = "password">
+                <label for = "password">Password</label>
+                <input type = "password" name = "password" id = "password"  onfocus = "hidePasswordErrorMessage()">
                 <div id = "password-error-message">
                 <%
                     if (request.getAttribute("isPasswordValid") != null) {
@@ -61,6 +61,8 @@
 
             <button type = "submit">Login</button>
         </form>
+
+        <script src = "js/login-validation.js"></script>
 
         <div class = "alternate-page-prompt">Not a customer yet? <a href = "signup">Signup</a></div>
 
