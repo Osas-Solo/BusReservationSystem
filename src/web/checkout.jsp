@@ -57,54 +57,62 @@
             destination = bus.getRoute().getDestination();
         %>
 
-        <form action = "confirm-reservation" method = "POST">
+        <form id = "checkout-form">
             <fieldset>
                 <label for = "transaction-id">Transaction ID</label>
-                <input type = "text" name = "transaction-id" id = "transaction-id"  value = "<%= transactionID%>" readonly>
+                <input type = "text" name = "transaction-id" id = "transaction-id"  value = "<%= transactionID %>" readonly>
             </fieldset>
 
             <fieldset>
                 <label for = "reservation-date">Reservation Date</label>
-                <input type = "text" name = "reservation-date" id = "reservation-date"  value = "<%= reservationDate%>" readonly>
+                <input type = "text" name = "reservation-date" id = "reservation-date"  value = "<%= reservationDate %>" readonly>
             </fieldset>
 
             <fieldset>
                 <label for = "fare">Fare:</label>
-                <input type = "number" name = "fare" id = "fare"  value = "<% out.print(String.format("%.2f", fare));%>" readonly>
+                <input type = "number" name = "fare" id = "fare"  value = "<% out.print(String.format("%.2f", fare)); %>" readonly>
             </fieldset>
 
             <fieldset>
                 <label for = "bus-id">Bus ID</label>
-                <input type = "text" name = "bus-id" id = "bus-id"  value = "<%= bus.getBusID()%>" readonly>
+                <input type = "text" name = "bus-id" id = "bus-id"  value = "<%= bus.getBusID() %>" readonly>
             </fieldset>
 
             <fieldset>
                 <label for = "seat-number">Seat Number</label>
-                <input type = "number" name = "seat-number" id = "seat-number"  value = "<%= seatNumber%>" readonly>
+                <input type = "number" name = "seat-number" id = "seat-number"  value = "<%= seatNumber %>" readonly>
             </fieldset>
 
             <fieldset>
                 <label for = "passenger-name">Passenger Name</label>
-                <input type = "text" name = "passenger-name" id = "passenger-name"  value = "<%= passengerName%>" readonly>
+                <input type = "text" name = "passenger-name" id = "passenger-name"  value = "<%= passengerName %>" readonly>
+            </fieldset>
+
+            <fieldset>
+                <label for = "email-address">Passenger Name</label>
+                <input type = "email" name = "email-address" id = "email-address"  value = "<%= emailAddress %>" readonly>
             </fieldset>
 
             <fieldset>
                 <label for = "station">Station</label>
-                <input type = "text" name = "station" id = "station"  value = "<%= station%>" readonly>
+                <input type = "text" name = "station" id = "station"  value = "<%= station %>" readonly>
             </fieldset>
 
             <fieldset>
                 <label for = "destination">Destination</label>
-                <input type = "text" name = "destination" id = "destination"  value = "<%= destination%>" readonly>
+                <input type = "text" name = "destination" id = "destination"  value = "<%= destination %>" readonly>
             </fieldset>
 
             <fieldset>
                 <label for = "arrival-date">Arrival Date</label>
-                <input type = "text" name = "arrival-date" id = "arrival-date"  value = "<%= arrivalDate%>" readonly>
+                <input type = "text" name = "arrival-date" id = "arrival-date"  value = "<%= arrivalDate %>" readonly>
             </fieldset>
 
-            <button type = "submit">Confirm Reservation</button>
+            <button type = "submit" onclick="payWithPaystack()">Confirm Reservation</button>
         </form>
+
+        <script src = "https://js.paystack.co/v1/inline.js"></script>
+        <script src = "js/paystack.js"></script>
 
     </article>
 
