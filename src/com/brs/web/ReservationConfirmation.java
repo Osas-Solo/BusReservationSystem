@@ -13,7 +13,7 @@ import java.util.Date;
 public class ReservationConfirmation extends HttpServlet {
 
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         response.setContentType("text/html");
@@ -122,5 +122,5 @@ public class ReservationConfirmation extends HttpServlet {
             out.println("<p>Error connecting to database</p>");
             e.printStackTrace();
         }
-    }   //  end of doGet()
+    }   //  end of doPost()
 }   //  end of class
